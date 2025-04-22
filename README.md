@@ -66,10 +66,13 @@ docker-compose down
 📂 Database Schema
 
 -- Enable UUID generation extensions
+
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
+
 -- Users table
+
 CREATE TABLE "Users" (
   "id" UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   "email" VARCHAR(255) UNIQUE NOT NULL,
@@ -78,7 +81,9 @@ CREATE TABLE "Users" (
   "createdAt" TIMESTAMP DEFAULT NOW()
 );
 
+
 -- GroceryItems table
+
 CREATE TABLE "GroceryItems" (
   "id" UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   "name" VARCHAR(255) NOT NULL,
@@ -88,14 +93,18 @@ CREATE TABLE "GroceryItems" (
   "updatedAt" TIMESTAMP DEFAULT NOW()
 );
 
+
 -- Orders table
+
 CREATE TABLE "Orders" (
   "id" UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   "userId" UUID NOT NULL REFERENCES "Users"("id"),
   "createdAt" TIMESTAMP DEFAULT NOW()
 );
 
+
 -- OrderItems table
+
 CREATE TABLE "OrderItems" (
   "id" UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   "orderId" UUID NOT NULL REFERENCES "Orders"("id") ON DELETE CASCADE,
