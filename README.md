@@ -39,8 +39,6 @@ npm install
 
 Once installed, you can run the app locally.
 
-after npm i code run locally and you do using docker then run below command
-
 
 🐳 Docker Support
 To use Docker, you can either pull the pre-built image or use Docker Compose:
