@@ -31,49 +31,35 @@ Containerization: Docker (for advanced deployment)
 
 🗃️ Getting Started
 
-first you clone the project 
-
 git clone https://github.com/chintan3540/qp-assessment.git
 
+cd qp-assessment
 
+npm install
+
+Once installed, you can run the app locally.
+
+after npm i code run locally and you do using docker then run below command
 
 
 🐳 Docker Support
+To use Docker, you can either pull the pre-built image or use Docker Compose:
+
+Option 1: Pull the Docker Image
 
 docker pull chintanbhesaniya/grocery-api
 
-or
+If the above command fails, use Docker Compose as described below.
 
-# Start the application
+Option 2: Use Docker Compose
+
+Start the Application
+
 docker-compose up -d
 
-# Stop and remove the application
+Stop and Remove the Application
+
 docker-compose down
-
-
-
-🧪 API Endpoints
-🔐 Authentication
-
-
-Method	Endpoint	      Description
-POST	/api/register	  Register a new user
-POST	/api/login	      Log in a user/admin
-
-👑 Admin Routes (/admin)
-
-Method	  Endpoint	                  Description
-POST	  /api/admin/grocery	      Add a new grocery item
-GET	      /api/admin/grocery	      View all grocery items
-GET	      /api/admin/grocery/:id	  View one grocery items
-PUT	      /api/admin/grocery/:id      Update grocery item details
-DELETE	  /api/admin/grocery/:id	  Delete a grocery item
-
-
-👤 User Routes
-Method	  Endpoint	          Description
-POST	  /api/order	      Book multiple groceries in one order
-GET	      /api/groceries      View available grocery items
 
 
 
@@ -118,3 +104,27 @@ CREATE TABLE "OrderItems" (
   "priceAtOrder" FLOAT NOT NULL
 );
 
+
+
+🧪 API Endpoints
+🔐 Authentication
+
+
+Method	Endpoint	      Description
+POST	/api/register	  Register a new user
+POST	/api/login	      Log in a user/admin
+
+👑 Admin Routes (/admin)
+
+Method	  Endpoint	                  Description
+POST	  /api/admin/grocery	      Add a new grocery item
+GET	      /api/admin/grocery	      View all grocery items
+GET	      /api/admin/grocery/:id	  View one grocery items
+PUT	      /api/admin/grocery/:id      Update grocery item details
+DELETE	  /api/admin/grocery/:id	  Delete a grocery item
+
+
+👤 User Routes
+Method	  Endpoint	          Description
+POST	  /api/order	      Book multiple groceries in one order
+GET	      /api/groceries      View available grocery items
